@@ -82,8 +82,9 @@ const Quiz = () => {
       if (timeLeft > 0) {
         setTimeLeft(timeLeft - 1);
       } else {
-        // handle time's up
-        console.log("Time's up!");
+        clearInterval(intervalId);
+        alert("Time's up!");
+        navigate("/result");
       }
     }, 1000); // decrement time every second
 
